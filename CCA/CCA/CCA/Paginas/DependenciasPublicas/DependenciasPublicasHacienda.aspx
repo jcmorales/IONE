@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <%@ Page Language="C#" %>
 <%@ Register tagprefix="SharePoint" namespace="Microsoft.SharePoint.WebControls" assembly="Microsoft.SharePoint, Version = 15.0.0.0, Culture = neutral, PublicKeyToken = 71e9bce111e9429c" %>
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
@@ -1122,16 +1122,16 @@ var SelectedItem;
 	</div>
 
 	<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+		<label class='control-label' id= 'lblEmpresaPersonasInvolucradas'  >* Empresa</label>
+		<input class='form-control text' idvariabledepende ='EmpresaPersonasInvolucradas' maxlength='50' id='txtEmpresaPersonasInvolucradas' type='text'  />
+	</div>
+	<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
 		<label class='control-label' id= 'lblNumeroEmpleadoPersonasInvolucradas'  >* Número de empleado</label>
 		<input class='form-control text' idvariabledepende ='NumeroEmpleadoPersonasInvolucradas' maxlength='8' id='txtNumeroEmpleadoPersonasInvolucradas' type='text'  />
 	</div>
 
-	<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
-		<label class='control-label' id= 'lblEmpresaPersonasInvolucradas'  >* Empresa</label>
-		<input class='form-control text' idvariabledepende ='EmpresaPersonasInvolucradas' maxlength='50' id='txtEmpresaPersonasInvolucradas' type='text'  />
-	</div>
-			</div>
 		</div>
+	</div>
 	</section>
 	<div id="Area" class='container'>
 		<div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
@@ -1159,18 +1159,18 @@ var SelectedItem;
 	<div id="ctHoraEvento" class='container'>
 		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
-				<label class='control-label' id= 'lblDependencia'  >* Dependencia</label>
-				<input class='form-control' idvariabledepende ='Dependencia' maxlength='50' id='txtDependencia' type='text'  />
+				<label class='control-label' id= 'lblNombreQuienAutoriza'  >* Nombre de quien autoriza</label>
+				<input class='form-control' idvariabledepende ='NombreQuienAutoriza' maxlength='50' id='txtNombreQuienAutoriza' type='text'  />
+			</div>
 			</div>
 			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
 				<label class='control-label' id= 'lblPuestoPersonaAutoriza'  >* Puesto de quien autoriza</label>
 				<input class='form-control' idvariabledepende ='PuestoPersonaAutoriza' maxlength='50' id='txtPuestoPersonaAutoriza' type='text'  />
 			</div>
-			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
-				<label class='control-label' id= 'lblNombreQuienAutoriza'  >* Nombre de quien autoriza</label>
-				<input class='form-control' idvariabledepende ='NombreQuienAutoriza' maxlength='50' id='txtNombreQuienAutoriza' type='text'  />
+						<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+				<label class='control-label' id= 'lblDependencia'  >* Dependencia</label>
+				<input class='form-control' idvariabledepende ='Dependencia' maxlength='50' id='txtDependencia' type='text'  />
 			</div>
-		</div>
 	</div>
 	<div id="ctHoraEvento" class='container'>
 		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
