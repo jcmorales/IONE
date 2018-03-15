@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <%@ Page Language="C#" %>
 <%@ Register tagprefix="SharePoint" namespace="Microsoft.SharePoint.WebControls" assembly="Microsoft.SharePoint, Version = 15.0.0.0, Culture = neutral, PublicKeyToken = 71e9bce111e9429c" %>
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
@@ -61,6 +61,7 @@
 		$('.moneda').inputmask('currency');
 
 		$('.numero').inputmask('numeric');
+		bloqueavestimanta();
 
 	});
 
@@ -936,6 +937,28 @@ async: false,
 			txt.style.visibility = 'visible';
 	}
 
+function bloqueavestimanta()
+	{
+		$('#txttrajeejecutivo').prop('disabled', true);
+		$('#txtcamisas').prop('disabled', true);
+		$('#txtcorbata').prop('disabled', true);
+		$('#txtotrosunif').prop('disabled', true);
+	}
+
+	function bloqueavestimenta(e)
+	{
+		var nm='txt'+e.value;		
+		var x= document.getElementById(e.id).checked;
+        if (x)
+           {        	        				
+        		 document.getElementById(nm).disabled = false;
+           }
+           else
+	       {      		
+
+        		 document.getElementById(nm).disabled = true;
+	       }
+	}
 var SelectedItem;
 
 
@@ -948,6 +971,20 @@ var SelectedItem;
 	<div id="ReportesDinamicos" class="container">
 		<div id="Reporte_2" class="BloqueReportesDinamicos">
 <h3 id="lblAgente Protección Nuevo Ingreso Guardia">Agente Protección Nuevo Ingreso Guardia</h3>
+
+	<div id="ctHoraEvento" class='container' style="text-align: right; right: auto">
+		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group' style="left: 0px; top: 0px; width: 80%" >
+				<label  id='lblFechaEntrega'>* Fecha de entrega</label>
+				<div class='input-group time pull-right' id='HoraOcurre'>
+					<input type='text' class='form-control pull-right' id="txtFechaEntrega" style="left: 0px; width: 25%" />
+					<span class='input-group-addon'>
+						<span class='glyphicon glyphicon-time'></span>
+					</span>
+				</div>
+			</div>			
+		</div>
+	</div>
 	<div id="ctHoraEvento" class='container'>
 		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
@@ -1024,35 +1061,63 @@ var SelectedItem;
 			</div>
 		</div>
 	</section>
-	<div id="ctHoraEvento" class='container'>
-		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
-				<label  id='lblFechaEntrega'>* Fecha de entrega</label>
-				<div class='input-group date' id='FechaEntrega'>
-					<input type='text' class='form-control' id="txtFechaEntrega"/>
-					<span class='input-group-addon'>
-						<span class='glyphicon glyphicon-time'></span>
-					</span>
-				</div>
-			</div>
-			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
-				<label class='control-label' id= 'lblotrosunif'  >* Otros</label>
-				<input class='form-control numero' idvariabledepende ='otrosunif' maxlength='100' id='txtotrosunif' type='text'  />
-			</div>
-			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
-				<label class='control-label' id= 'lbltrajeejecutivo'  >* Traje ejecutivo</label>
-				<input class='form-control' idvariabledepende ='trajeejecutivo' maxlength='100' id='txttrajeejecutivo' type='text'  />
-			</div>
-			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
-				<label class='control-label' id= 'lblcamisas'  >* Camisas</label>
-				<input class='form-control' idvariabledepende ='camisas' maxlength='100' id='txtcamisas' type='text'  />
-			</div>
-			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
-				<label class='control-label' id= 'lblcorbata'  >* Corbata</label>
-				<input class='form-control' idvariabledepende ='corbata' maxlength='100' id='txtcorbata' type='text'  />
-			</div>
+	
+	
+		<div id="ctVestimenta"  >
+		<div>		
+				<table style="vertical-align:bottom; text-align: left;"  >
+			<tr>      
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td style="vertical-align:bottom" valign="bottom">                
+					<label class='control-label'  id= 'lbltrajeejecutivo'  >* Traje ejecutivo</label>
+				</td>
+				<td style="width: 50px">
+					<input id="chktrajeejecutivo" onclick="bloqueavestimenta(this);" class="form-control" type="checkbox" value="trajeejecutivo" /></td>
+				<td style="width: 250px">
+					<input id="txttrajeejecutivo" class="form-control numero" idvariabledepende="Trajeejecutivo" maxlength="100" type="text" /></td>
+				<td class="auto-style2">&nbsp;</td>            
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td style="vertical-align: bottom" valign="bottom" >                
+					<label class='control-label' id= 'lblcamisas'  >* Camisas</label></td>
+				<td style="width: 50px">
+					<input class='form-control' onclick="bloqueavestimenta(this);" type='checkbox' id='chkcamisas' value='camisas'/></td>
+				<td>
+					<input class='form-control numero' idvariabledepende ='PlayeraInterior' maxlength='25' id='txtPlayeraInterior' type='text'  /></td>
+				<td class="auto-style2">&nbsp;</td>				  
+			</tr>       
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td style="vertical-align:bottom" valign="bottom">                
+					<label class='control-label' id= 'lblcorbata'  >* Corbata</label></td>
+				<td style="width: 50px">
+					<input class='form-control' onclick="bloqueavestimenta(this);" type='checkbox' id='chkcorbata' value='corbata'/></td>
+				<td>
+					<input class='form-control numero' idvariabledepende ='corbata' maxlength='25' id='txtcorbata' type='text'  /></td>
+				<td class="auto-style2">&nbsp;</td>
+					
+
+			</tr>						
+			<tr style="vertical-align:middle" valign="middle">
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+				<td>&nbsp;</td>
+				<td style="vertical-align: bottom" valign="bottom" >                
+					<label class='control-label' id= 'lblotrosunif'  >* Otros</label></td>
+				<td style="width: 50px">
+					<input class='form-control' onclick="bloqueavestimenta(this);" type='checkbox' id='chkOtrosunif' value='otrosunif'/></td>
+				<td>
+					<input class='form-control numero' idvariabledepende ='otrosunif' maxlength='100' id='txtotrosunif' type='text'  /></td>
+				<td class="auto-style2"></td>
+				   
+			</tr>
+			</table>
 		</div>
 	</div>
+
 	<div id="ctHoraEvento" class='container'>
 		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 			<div class='col-xs-12 col-md-12 col-lg-12 col-xl-12 form-group'>
