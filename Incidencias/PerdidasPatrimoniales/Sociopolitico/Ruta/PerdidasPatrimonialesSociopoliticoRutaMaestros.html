@@ -1,0 +1,371 @@
+﻿<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- CSS Datepicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/css/bootstrap-datetimepicker.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- JS Datepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/js/bootstrap-datetimepicker.min.js"></script>
+</head>
+
+
+
+
+<div class='container'>
+    <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label id='lblHoraQueOcurre'>* Hora en que ocurre</label>
+            <div class='input-group date' id='HoraQueOcurre'>
+                <input type='text' class='form-control'>
+                <span class='input-group-addon'>
+                    <span class='glyphicon glyphicon-time'></span>
+                </span>
+            </div>
+        </div>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label id='lblHoraFinaliza'> * Hora que Finaliza</label>
+            <div class='input-group date' id='HoraFinaliza'>
+                <input type='text' class='form-control'>
+                <span class='input-group-addon'>
+                    <span class='glyphicon glyphicon-time'></span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label  id='lblHoraReportanProteccion'> * Hora en que reportan a protección</label>
+            <div class='input-group date' id='HoraReportanProteccion'>
+                <input type='text' class='form-control'>
+                <span class='input-group-addon'>
+                    <span class='glyphicon glyphicon-time'></span>
+                </span>
+            </div>
+        </div>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label  id='lblNombrePersonaReportaProteccion'> * Nombre de la persona que reporta a protección</label>
+            <input class='form-control' maxlength='50' id='NombrePersonaReportaProteccion' type='text'>
+        </div>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label  id='lblPuestoPersonaReportaProteccion'> * Puesto de la persona que reporta a protección</label>
+            <select class='form-control' id='PuestoPersonaReportaProteccion'>
+                <option></option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group' unselectable='on'>
+            <input type='button' onchange='javascript:CrearMasCampos(this);' id='NumeroPersonasInvolucradas' value='lblNumeroPersonasInvolucradas'>
+        </div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblNombrePersonasInvolucradas'>* Nombre(s) persona(s) involucrada(s)</label>
+            <input class='form-control' idvariabledepende='NumeroPersonasInvolucradas' maxlength='50' id='NombrePersonasInvolucradas' type='text'>
+        </div>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblAreaPersonasInvolucradas'>* Área</label>
+            <input class='form-control' idvariabledepende='NumeroPersonasInvolucradas' maxlength='50' id='AreaPersonasInvolucradas' type='text'>
+        </div>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblNumeroEmpleadoPersonasInvolucradas'>* Numero de empleado</label>
+            <input class='form-control' idvariabledepende='NumeroPersonasInvolucradas' maxlength='50' id='NumeroEmpleadoPersonasInvolucradas' type='text'>
+        </div>
+      
+    </div>
+</div>
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblMotivo'>* Motivo</label>
+            <input class='form-control' maxlength='50' id='Motivo' type='text'>
+        </div>
+		
+    </div>
+</div>
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblReincidente'>* Reincidente</label>
+            <input class='form-control' maxlength='50' id='Reincidente' type='text'>
+        </div>
+		
+    </div>
+</div>
+
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblNumeroDelincuentes'>* Numero de delincuentes</label>
+            <input class='form-control' maxlength='50' id='NumeroDelincuentes' type='text'>
+        </div>
+    </div>
+</div>
+
+
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group' unselectable='on'>
+            <input type='button' onchange='javascript:CrearMasCampos(this);' id='NumeroRutas' value='lblNumeroRutas'>
+        </div>
+    </div>
+</div>
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblRuta'>* Ruta</label>
+            <input class='form-control' idvariabledepende='NumeroRutas' maxlength='50' id='Ruta' type='text'>
+        </div>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblEconomico'>* Economico</label>
+            <input class='form-control' idvariabledepende='NumeroRutas' maxlength='50' id='Economico' type='text'>
+        </div>
+		<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblPlacas'>* Placas</label>
+            <input class='form-control' idvariabledepende='NumeroRutas' maxlength='50' id='Placas' type='text'>
+        </div>
+    </div>
+</div>
+
+
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group' unselectable='on'>
+            <input type='button' onchange='javascript:CrearMasCampos(this);' id='NumeroClientesInolucrados' value='lblNumeroClientesInolucrados'>
+        </div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblCliente'>* Cliente</label>
+            <input class='form-control' idvariabledepende='NumeroClientesInolucrados' maxlength='50' id='Cliente' type='text'>
+        </div>
+		<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+        <label id='lblHorarioPresentoConCliente'> * Horario en el que se presento con el cliente</label>
+            <div class='input-group date' id='HorarioPresentoConCliente'>
+                <input type='text' class='form-control' idvariabledepende='NumeroClientesInolucrados'>
+                <span class='input-group-addon'>
+                    <span class='glyphicon glyphicon-time'></span>
+                </span>
+            </div>
+		</div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblLugarResguardo'>* LugarResguardo</label>
+            <input class='form-control' maxlength='50' id='LugarResguardo' type='text'>
+        </div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblCalleIncidente'>* Calle</label>
+            <input class='form-control' maxlength='50' id='CalleIncidente' type='text'>
+        </div>
+		<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblNumeroIncidente'>* Número</label>
+            <input class='form-control' maxlength='50' id='NumeroIncidente' type='text'>
+        </div>
+		<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblColoniaIncidente'>* Colonia</label>
+            <input class='form-control' maxlength='50' id='ColoniaIncidente' type='text'>
+        </div>
+		<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblMunicipioIncidente'>* Municipio</label>
+            <input class='form-control' maxlength='50' id='MunicipioIncidente' type='text'>
+        </div>
+		<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblEstadoIncidente'>* Estado</label>
+            <input class='form-control' maxlength='50' id='EstadoIncidente' type='text'>
+        </div>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblCodigoPostal'>* Código Postal</label>
+            <input class='form-control' maxlength='50' id='CodigoPostal' type='text'>
+        </div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblStatusCaja'>* Status de caja</label>
+            <input class='form-control' maxlength='50' id='StatusCaja' type='text'>
+        </div>
+		<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblNumeroAveriguacionPrevia'>* Numero de averiguación previa</label>
+            <input class='form-control' maxlength='50' id='NumeroAveriguacionPrevia' type='text'>
+        </div>
+	</div>
+</div>
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblDetenidos'>* Detenidos</label>
+            <input class='form-control' maxlength='50' id='Detenidos' type='text'>
+        </div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group' unselectable='on'>
+            <input type='button' onchange='javascript:CrearMasCampos(this);' id='AgregarProducto' value='lblAgregarProducto'>
+        </div>
+    </div>
+</div>
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblProducto'>* Producto</label>
+            <input class='form-control' idvariabledepende='AgregarProducto' maxlength='50' id='Producto' type='text'>
+        </div>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblCantidadProducto'>* Cantidad</label>
+            <input class='form-control' idvariabledepende='AgregarProducto' maxlength='50' id='CantidadProducto' type='text'>
+        </div>
+		<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblMontoUnitarioProducto'>* Monto Unitario </label>
+            <input class='form-control' idvariabledepende='AgregarProducto' maxlength='50' id='MontoUnitarioProducto' type='text'>
+        </div>
+		<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblTotalProducto'>* Total </label>
+            <input class='form-control' idvariabledepende='AgregarProducto' maxlength='50' id='TotalProducto' type='text'>
+        </div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+            <label   id='lblMontoAproximadoProducto'>* Monto aproximado del producto</label>
+            <input class='form-control' maxlength='50' id='MontoAproximadoProducto' type='text'>
+        </div>
+    </div>
+</div>
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3'>
+            <label class='control-label' id='lblMontoEfectivo'>* Monto efectivo</label>
+        </div>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3'>
+            <input class='form-control' maxlength='50' id='MontoEfectivo' type='text'>
+        </div>
+    </div>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3'>
+            <label class='control-label' id='lblMontoAproximadoEfectivo'>* Monto aproximado efectivo</label>
+        </div>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3'>
+            <input class='form-control' maxlength='50' id='MontoAproximadoEfectivo' type='text'>
+        </div>
+    </div>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3'>
+            <label class='control-label' id='lblOtrosMontos'>* Otros montos</label>
+        </div>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3'>
+            <input class='form-control' maxlength='50' id='OtrosMontos' type='text'>
+        </div>
+    </div>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3'>
+            <label class='control-label' id='lblMontoTotal'>* Monto total</label>
+        </div>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3'>
+            <input class='form-control' maxlength='50' id='MontoTotal' type='text'>
+        </div>
+    </div>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3'>
+            <label class='control-label' id='lblMontoRecuperacion'>* Monto recuperación</label>
+        </div>
+        <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3'>
+            <input class='form-control' maxlength='50' id='MontoRecuperacion' type='text'>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-12 col-md-12 col-lg-12 col-xl-12 form-group'>
+            <label class='obligatorio  etiquetaM control-label'>* Observaciones/Información adicional</label>
+            <textArea maxlength='5000' id='ObservacionesInformacionAdicional' class='form-control' rows='5'></textArea>
+        </div>
+    </div>
+</div>
+
+
+<script>
+                $(function () {
+                    $.ajax({
+                        async: false,
+                        url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getbytitle('LstPuestoProteccion')/Items?$select=Title,LinkTitleNoMenu,LinkTitle,Pa_x00ed_s,ID&$filter=Pa_x00ed_s eq '" + encodeURIComponent('México') + "'",
+                        type: 'GET',
+                        headers: {
+                            'accept': 'application/json;odata=verbose'
+                        },
+                        success: function (data) {
+                            if (data.d.results) {
+                                console.log('entró');
+                                for (var i = 0; i < data.d.results.length; i++) {
+
+                                    var x = document.getElementById('PuestoPersonaReportaProteccion');
+                                    var option = document.createElement('option');
+                                    option.text = data.d.results[i].Title
+                                    option.value = data.d.results[i].Title;
+                                    x.add(option);
+
+                                    
+
+                                    
+                                }
+                            }
+                        },
+                        error: function (xhr) {
+                            alert(xhr.status + ': ' + xhr.statusText);
+                        }
+                    });
+                });
+</script>
