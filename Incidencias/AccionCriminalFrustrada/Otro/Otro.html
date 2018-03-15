@@ -1,0 +1,240 @@
+﻿<head>
+    <meta charset="utf-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- CSS Datepicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/css/bootstrap-datetimepicker.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- JS Datepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.45/js/bootstrap-datetimepicker.min.js"></script>
+</head>
+<div id="ReportesDinamicos" class="container">
+    <div id="Reporte_2" class="BloqueReportesDinamicos">
+    <div class='container'>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='lblHoraQueOcurre'>Hora en que ocurre: *</label>
+        <div class='input-group date' id='HoraQueOcurre'>
+            <input type='text' class='form-control'>
+            <span class='input-group-addon'>
+                <span class='glyphicon glyphicon-time'></span>
+            </span>
+        </div>
+    </div>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='HoraFinaliza'>Hora en que finaliza: *</label>
+        <div class='input-group date' id='HoraFinaliza'>
+            <input type='text' class='form-control'>
+            <span class='input-group-addon'>
+                <span class='glyphicon glyphicon-time'></span>
+            </span>
+        </div>
+    </div>
+    <div class='col-xs-12 col-md-6 col-lg-6 col-xl-6 form-group '></div>
+</div>
+<div class='container'>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='lblHoraReportanProteccion'>Hora en que reportan a protección: *</label>
+        <div class='input-group date' id='HoraReportanProteccion'>
+            <input type='text' class='form-control'>
+            <span class='input-group-addon'>
+                <span class='glyphicon glyphicon-time'></span>
+            </span>
+        </div>
+    </div>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='lblNombrePersonaReportaProteccion'>Nombre de la persona que reporta a protección *</label>
+        <input type='text' class='form-control' id='NombrePersonaReportaProteccion' maxlength='50'>
+    </div>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='lblPuestoPersonaReportaProteccion'>Puesto de la persona que reporta a protección *</label>
+        <select class='form-control' id='PuestoPersonaReportaProteccion'>
+            <option></option>
+        </select>
+    </div>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '></div>
+</div>
+<div class='container'>
+            <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+                <div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group' unselectable='on'>
+                    <input type='button' onclick='javascript:DuplicarGrupo("DuplicacionBloquePersona", this);' id='NumeroPersonasInvolucradas' value='lblNumeroPersonasInvolucradas'>
+                </div>
+            </div>
+        </div>
+        <section class="PersonasDuplicadas">
+            <div class='container DuplicacionBloquePersona' style="visibility:hidden; display:none">
+                <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+                    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+                        <label class='control-label' id= 'lblNombrePersonasInvolucradas'>Nombre(s) de la(s) persona(s) involucrada(s) *</label>
+                        <input class='form-control' idvariabledepende ='NumeroPersonasInvolucradas' maxlength='50' id='NombrePersonasInvolucradas' type='text'>
+                    </div>
+                    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+                        <label class='control-label' id='lblAreaPersonasInvolucradas'>Area *</label>
+                        <input type='text' class='form-control' idvariabledepende ='NumeroPersonasInvolucradas' maxlength='50' id=''>
+                    </div>
+                    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+                        <label class='control-label' id='lblEmpresaPersonasInvolucradas'>Empresa *</label>
+                        <input type='text' class='form-control' idvariabledepende='NumeroPersonasInvolucradas' maxlength='50' id='EmpresaPersonasInvolucradas'>
+                    </div>
+                        <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+                        <label class='control-label' id='lblNumeroEmpleadoPersonasInvolucradas'>Numero de empleado *</label>
+                        <input type='text' class='form-control' idvariabledepende='NumeroPersonasInvolucradas' maxlength='50' id='NumeroEmpleadoPersonasInvolucradas'>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<div class='container'>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='lblNumeroDelincuentes'>Número de delincuentes *</label>
+        <input type='text' class='form-control' id='NumeroDelincuentes' maxlength='50'>
+    </div>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='lblTipoArma'>Tipo de arma *</label>
+        <input type='text' class='form-control' id='TipoArma' maxlength='50'>
+    </div>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='lblNumeroAveriguacionPrevia'>Numero de averiguación previa *</label>
+        <input type='text' class='form-control' id='NumeroAveriguacionPrevia' maxlength='50'>
+    </div>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '></div>
+</div>
+<div class='container'>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='lblCalleIncidente'>Calle *</label>
+        <input type='text' class='form-control' id='CalleIncidente' maxlength='50'>
+    </div>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='lblNumeroIncidente'>Numero *</label>
+        <input type='text' class='form-control' id='NumeroIncidente' maxlength='50'>
+    </div>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='lblColoniaIncidente'>Colonia *</label>
+        <input type='text' class='form-control' id='ColoniaIncidente' maxlength='50'>
+    </div>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='lblEstadoIncidente'>Estado *</label>
+        <input type='text' class='form-control' id='EstadoIncidente' maxlength='50'>
+    </div>
+</div>
+<div class='container'>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='lblMunicipioIncidente'>Municipio/Delegación *</label>
+        <input type='text' class='form-control' id='MunicipioIncidente' maxlength='50'>
+    </div>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        <label class='control-label' id='lblCodigoPostal'>Código Postal *</label>
+        <input type='text' class='form-control' id='CodigoPostal'>
+    </div>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '></div>
+    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '></div>
+</div>
+<div class='container'>
+    <div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+        <div class='col-xs-12 col-md-12 col-lg-12 col-xl-12 form-group'>
+            <label class='obligatorio  etiquetaM control-label'>* Observaciones/Información adicional</label>
+            <textArea maxlength='5000' id='ObservacionesInformacionAdicional' class='form-control' rows='5'></textArea>
+        </div>
+    </div>
+</div>
+
+  <script>
+            function DuplicarGrupo(claseDuplicados, elementChild) {
+                padreBoton = elementChild.parentNode;
+                padrePadreBoton = padreBoton.parentNode;
+                padrePadrePadreBoton = padrePadreBoton.parentNode;
+                padrePadrePadrePadreBoton = padrePadrePadreBoton.parentNode;
+                nombrePadre = padrePadrePadrePadreBoton.id;
+                console.log(nombrePadre);
+                listaReportes = document.getElementsByClassName("BloqueReportesDinamicos");
+                for (i = 0; i < listaReportes.length; i++) {
+                    if (listaReportes[i].id == nombrePadre) {
+                        var totalListaDuplicacion = listaReportes[i].getElementsByClassName(claseDuplicados).length;
+                        var listaDuplicacion = listaReportes[i].getElementsByClassName(claseDuplicados)[0];
+                        break;
+                    }
+                }
+
+                elementosDuplicar = listaDuplicacion.getElementsByTagName("div");
+                padreAnexar = listaDuplicacion.parentNode;
+
+                //contenedor de bloque
+                var divfinalcontenedor = document.createElement("div");
+                divfinalcontenedor.setAttribute("class", elementosDuplicar[0].className);
+
+                //contenedor clase
+                var divfinalcontenedorclase = document.createElement("div");
+                divfinalcontenedorclase.setAttribute("class", listaDuplicacion.className);
+                divfinalcontenedorclase.setAttribute("id", totalListaDuplicacion);
+
+                var inputeliminar = document.createElement("input");
+                inputeliminar.type = "button";
+                inputeliminar.setAttribute("onclick", 'EliminarBloqueDuplicacion(this);');
+                inputeliminar.value = "X";
+
+                divfinalcontenedorclase.appendChild(inputeliminar);
+
+                for (i = 1; i < elementosDuplicar.length; i++) {
+                    elementinput = elementosDuplicar[i].getElementsByTagName("input")[0];
+                    elementlabel = elementosDuplicar[i].getElementsByTagName("label")[0];
+                    elementselect = elementosDuplicar[i].getElementsByTagName("select")[0];
+
+                    //console.log(elementinput);
+                    //console.log(elementlabel);
+
+                    if (elementinput === undefined || elementinput=== null ) {
+                        var lbl1 = document.createElement('label');
+                        lbl1.setAttribute("id", elementselect.id + totalListaDuplicacion);
+                        lbl1.innerHTML = elementlabel.innerHTML
+
+                        var txb1 = document.createElement('select');
+                        txb1.setAttribute("id", elementselect.id + totalListaDuplicacion);
+                        txb1.setAttribute("class", elementselect.className);
+                    }
+                    else {
+                        var lbl1 = document.createElement('label');
+                        lbl1.setAttribute("id", elementinput.id + totalListaDuplicacion);
+                        lbl1.innerHTML = elementlabel.innerHTML;
+
+                        var txb1 = document.createElement('input');
+                        txb1.type = "text";
+                        txb1.setAttribute("id", elementinput.id + totalListaDuplicacion);
+                        txb1.setAttribute("maxlength", elementinput.maxlength);
+                        txb1.setAttribute("class", elementinput.className);
+                    }
+
+                    var divfinal1 = document.createElement("div");
+                    divfinal1.setAttribute("class", elementosDuplicar[i].className);
+                    divfinal1.appendChild(lbl1);
+                    divfinal1.appendChild(txb1);
+
+
+                    divfinalcontenedor.appendChild(divfinal1);
+                }
+                divfinalcontenedorclase.appendChild(divfinalcontenedor);
+                padreAnexar.appendChild(divfinalcontenedorclase);
+                return;
+                
+            }
+
+            function EliminarReporteIncidencia(nombreElemento) {
+                elementoPadre = nombreElemento.parentNode;
+                elementoPadrePadre = elementoPadre.parentNode;
+                elementoPadrePadrePadre = elementoPadrePadre.parentNode;
+                elementoPadrePadrePadre.parentNode.removeChild(elementoPadrePadrePadre);
+            }
+
+            function EliminarBloqueDuplicacion(element) {
+                elementParent = element.parentNode;
+                elementParent.parentNode.removeChild(elementParent);
+            }
+        </script>
+    </div>
+
+
+
+  </div>
