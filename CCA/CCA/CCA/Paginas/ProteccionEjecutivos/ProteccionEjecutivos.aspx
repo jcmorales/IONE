@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <%@ Page Language="C#" %>
 <%@ Register tagprefix="SharePoint" namespace="Microsoft.SharePoint.WebControls" assembly="Microsoft.SharePoint, Version = 15.0.0.0, Culture = neutral, PublicKeyToken = 71e9bce111e9429c" %>
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
@@ -1174,7 +1174,7 @@ var SelectedItem;
 		</div>
 	</div>
 	<section class="AreaD">
-		<div class='container DArea' style="visibility:hidden; display:none">
+		<div class='container DArea' >
 			<div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
 
 	<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
