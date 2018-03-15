@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <%@ Page Language="C#" %>
 <%@ Register tagprefix="SharePoint" namespace="Microsoft.SharePoint.WebControls" assembly="Microsoft.SharePoint, Version = 15.0.0.0, Culture = neutral, PublicKeyToken = 71e9bce111e9429c" %>
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
@@ -6,7 +6,7 @@
 <!--Documento generado de manera dinámica por SPFormsEasy -->
 <!--Nombre del documento: AgenteProteccionNuevoIngresoGuardia -->
 <!--Creado por: Luis Alonso Escalona Morales -->
-<!--Creado el: 11/03/2018 -->
+<!--Creado el: 13/03/2018 -->
 <SharePoint:ScriptLink Name="MicrosoftAjax.js" runat="server" Defer="False" Localizable="false"/>
 <SharePoint:ScriptLink Name="SP.core.js" runat="server" Defer="False" Localizable="false"/>
 <SharePoint:ScriptLink Name="SP.js" runat="server" Defer="False" Localizable="false"/>
@@ -44,7 +44,6 @@
 	var URL = "https://cocacolafemsa.sharepoint.com/sites/SWPP";
 	$(document).ready(function () {
 		SP.SOD.executeOrDelayUntilScriptLoaded(getCurrentUser, 'SP.UserProfiles.js');
-		bloqueavestimanta();				
 		$('#NumeroPersonasInvolucradas').on('click', contarPersonasInvolucradas);
 		$('#btnAgregar').on('click', agregar);
 		$('#HNBR').text($.get('NBR'));
@@ -62,6 +61,8 @@
 		$('.moneda').inputmask('currency');
 
 		$('.numero').inputmask('numeric');
+		
+		bloqueavestimanta();
 
 	});
 
@@ -608,7 +609,7 @@ async: false,
 	        elementlabel = elementosDuplicar[i].getElementsByTagName("label")[0];
 			elementText = elementosDuplicar[i].getElementsByClassName("text")[0];
 			elementDate = elementosDuplicar[i].getElementsByClassName("date")[0];
-			elementTime = elementosDuplicar[i].getElementsByClassName("time")[0];
+			elementTime = elementosDuplicar[i].getElementsByClassName("tiempo")[0];
 			elementNumero = elementosDuplicar[i].getElementsByClassName("numero")[0];
 			elementoMoneda = elementosDuplicar[i].getElementsByClassName("moneda")[0];
 			elementoArea = elementosDuplicar[i].getElementsByClassName("area")[0];
@@ -628,62 +629,35 @@ async: false,
 									if(elementTime === undefined || elementTime === null) {
 									}
 									else {
-									
-										console.log('Tiempo');
-				                        var lblt = document.createElement('label');
-				                        lblt.setAttribute("id", "lbl"+ elementTime .id + totalListaDuplicacion);
-				                        lblt.innerHTML = elementlabel.innerHTML;
-									
-										var divbt = document.createElement('div');
-										divbt.setAttribute("id", "div" + elementTime .id + totalListaDuplicacion);
-										divbt.setAttribute("class", "input-group time");	
-										
-					                    var txbt = document.createElement('input');
-				                        txbt.type = "text";
-				                        txbt.setAttribute("id", "txt" + elementTime .id + totalListaDuplicacion);
-				                        txbt.setAttribute("class", "form-control");
-				                        
-				                        var spbt = document.createElement('span');
-				                        spbt.setAttribute("class", "input-group-addon");
-		
-				                        var spbtb = document.createElement('span');
-				                        spbtb.setAttribute("class", "glyphicon glyphicon-time");
-				                        spbt.appendChild(spbtb);
-				                        
-				                        divbt.appendChild(txbt);
-				                        divbt.appendChild(spbt);
-				                        
-				                        divfinal1.appendChild(lblt);
-					                    divfinal1.appendChild(divbt);	
+					                    var lbl1 = document.createElement('label');
+					                    lbl1.setAttribute("id", "lbl"+elementTime.id + totalListaDuplicacion);
+					                    lbl1.innerHTML = elementlabel.innerHTML;
+					
+					                    var txb1 = document.createElement('input');
+					                    txb1.type = "text";
+					                    txb1.setAttribute("id", elementTime.id + totalListaDuplicacion);
+					                    txb1.setAttribute("maxlength", elementTime.maxlength);
+					                    txb1.setAttribute("class", elementTime.className);
+					                    
+					                    divfinal1.appendChild(lbl1);
+					                    divfinal1.appendChild(txb1);
 				                    }		
 				                }					
 								else {								
 									console.log('Fecha');
-			                        var lblf = document.createElement('label');
-			                        lblf.setAttribute("id", "lbl"+ elementDate .id + totalListaDuplicacion);
-			                        lblf.innerHTML = elementlabel.innerHTML;
-								
-									var divbf = document.createElement('div');
-									divbf.setAttribute("id", "div" + elementDate .id + totalListaDuplicacion);
-									divbf.setAttribute("class", "input-group date");	
+				                    var lbl1 = document.createElement('label');
+				                    lbl1.setAttribute("id", "lbl"+elementDate.id + totalListaDuplicacion);
+				                    lbl1.innerHTML = elementlabel.innerHTML;
+				
+				                    var txb1 = document.createElement('input');
+				                    txb1.type = "text";
+				                    txb1.setAttribute("id", elementDate.id + totalListaDuplicacion);
+				                    txb1.setAttribute("maxlength", elementDate.maxlength);
+				                    txb1.setAttribute("class", elementDate.className);
+				                    
+				                    divfinal1.appendChild(lbl1);
+				                    divfinal1.appendChild(txb1);
 									
-				                    var txbf = document.createElement('input');
-			                        txbf.type = "text";
-			                        txbf.setAttribute("id", "txt" + elementDate .id + totalListaDuplicacion);
-			                        txbf.setAttribute("class", "form-control");
-			                        
-			                        var spbf = document.createElement('span');
-			                        spbf.setAttribute("class", "input-group-addon");
-	
-			                        var spbfb = document.createElement('span');
-			                        spbfb.setAttribute("class", "glyphicon glyphicon-time");
-			                        spbf.appendChild(spbfb);
-			                        
-			                        divbf.appendChild(txbf);
-			                        divbf.appendChild(spbf);
-			                        
-			                        divfinal1.appendChild(lblf);
-				                    divfinal1.appendChild(divbf);									
 								}								
 							}
 							else {
@@ -940,23 +914,116 @@ async: false,
         clientContextMun.executeQueryAsync(Function.createDelegate(this, this.onExitoCargaMun), Function.createDelegate(this, this.onCargaError));
 	}
 	function getLugarTraslado()
-	{
+	{	
+		var lbl = document.getElementById('lblLugardeTraslado');
 		var txt = document.getElementById('txtLugardeTraslado');
 		var ops = $('#LstOcupaTraslado_ option:selected').text();
 		if(ops.toUpperCase() != 'SI')
+		{
+			lbl.style.visibility = 'hidden';
 			txt.style.visibility = 'hidden';
+		}
 		else
+		{
+			lbl.style.visibility = 'visible';
 			txt.style.visibility = 'visible';
+		}
 	}
 	function getLugarTraslado2(opc)
 	{
-		console.log('entro lugartraslado');
+		var lbl = document.getElementById('lblLugardeTraslado');
 		var txt = document.getElementById('txtLugardeTraslado');
-		console.log(opc.toUpperCase());
 		if(opc.toUpperCase() != 'SI')
+		{
+			lbl.style.visibility = 'hidden';
 			txt.style.visibility = 'hidden';
+		}
 		else
+		{
+			lbl.style.visibility = 'visible';
 			txt.style.visibility = 'visible';
+		}
+	}
+	function getEspecificaArma()
+	{
+		var lbl = document.getElementById('lblEspecificaArma');
+		var txt = document.getElementById('txtEspecificaArma');
+		var ops = $('#LstTipoArma_ option:selected').text();
+		if(ops.toUpperCase() != 'OTROS')
+		{
+			lbl.style.visibility = 'hidden';
+			txt.style.visibility = 'hidden';
+		}
+		else
+		{
+			lbl.style.visibility = 'visible';
+			txt.style.visibility = 'visible';
+		}
+	}
+	function getEspecificaArma2(opc)
+	{
+		console.log('entro EspecificaArma');
+		var lbl = document.getElementById('lblEspecificaArma');		
+		var txt = document.getElementById('txtEspecificaArma');
+		console.log(opc.toUpperCase());
+		if(opc.toUpperCase() != 'OTROS')
+		{
+			lbl.style.visibility = 'hidden';
+			txt.style.visibility = 'hidden';
+		}
+		else
+		{
+			lbl.style.visibility = 'visible';
+			txt.style.visibility = 'visible';
+		}
+	}
+	function getRespaldo()
+	{
+		var lbld = document.getElementById('lblDesRespaldo');
+		var txtd = document.getElementById('txtDesRespaldo');
+
+		var lblm = document.getElementById('lblMontoRespaldo');
+		var txtm = document.getElementById('txtMontoRespaldo');
+		var ops = $('#LstRespaldo_ option:selected').text();
+		if(ops.toUpperCase() != 'SI')
+		{
+	
+			lbld.style.visibility = 'hidden';
+			txtd.style.visibility = 'hidden';
+			lblm.style.visibility = 'visible';
+			txtm.style.visibility = 'visible';
+		}
+		else
+		{
+			lbld.style.visibility = 'visible';
+			txtd.style.visibility = 'visible';
+			lblm.style.visibility = 'hidden';
+			txtm.style.visibility = 'hidden';
+		}
+	}
+	function getRespaldo2(ops)
+	{
+		var lbld = document.getElementById('lblDesRespaldo');
+		var txtd = document.getElementById('txtDesRespaldo');
+
+		var lblm = document.getElementById('lblMontoRespaldo');
+		var txtm = document.getElementById('txtMontoRespaldo');
+
+		if(ops.toUpperCase() != 'SI')
+		{
+	
+			lbld.style.visibility = 'hidden';
+			txtd.style.visibility = 'hidden';
+			lblm.style.visibility = 'visible';
+			txtm.style.visibility = 'visible';
+		}
+		else
+		{
+			lbld.style.visibility = 'visible';
+			txtd.style.visibility = 'visible';
+			lblm.style.visibility = 'hidden';
+			txtm.style.visibility = 'hidden';
+		}
 	}
 
 	function bloqueavestimanta()
@@ -978,17 +1045,13 @@ async: false,
         		 document.getElementById(nm).disabled = false;
            }
            else
-	       {      	
+	       {      		
+
         		 document.getElementById(nm).disabled = true;
 	       }
-	  }
-
+	}
 
 var SelectedItem;
-
-
-
-
 
 </script>
 </head>
@@ -996,12 +1059,28 @@ var SelectedItem;
 	<div id="ReportesDinamicos" class="container">
 		<div id="Reporte_2" class="BloqueReportesDinamicos">
 <h3 id="lblAgente Protección Nuevo Ingreso Guardia">Agente Protección Nuevo Ingreso Guardia</h3>
+
+	<div id="ctHoraEvento" class='container' style="text-align: right; right: auto">
+		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group' style="left: 0px; top: 0px; width: 80%" >
+				<label  id='lblFechaEntrega'>* Fecha de entrega</label>
+				<div class='input-group time pull-right' id='HoraOcurre'>
+					<input type='text' class='form-control pull-right' id="txtFechaEntrega" style="left: 0px; width: 25%" />
+					<span class='input-group-addon'>
+						<span class='glyphicon glyphicon-time'></span>
+					</span>
+				</div>
+			</div>			
+		</div>
+	</div>
+
+
 	<div id="ctHoraEvento" class='container'>
 		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
 				<label  id='lblHoraOcurre'>* Hora en que ocurre</label>
-				<div class='input-group time' id='HoraOcurre'>
-					<input type='text' class='form-control' id="txtHoraOcurre"/>
+				<div class='input-group time pull-right' id='HoraOcurre'>
+					<input type='text' class='form-control pull-right' id="txtHoraOcurre"/>
 					<span class='input-group-addon'>
 						<span class='glyphicon glyphicon-time'></span>
 					</span>
@@ -1072,91 +1151,92 @@ var SelectedItem;
 			</div>
 		</div>
 	</section>
-	<div id="ctHoraEvento" class='container'>
-		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
-				<label  id='lblFechaEntrega'>* Fecha de entrega</label>
-				<div class='input-group date' id='FechaEntrega'>
-					<input type='text' class='form-control' id="txtFechaEntrega"/>
-					<span class='input-group-addon'>
-						<span class='glyphicon glyphicon-time'></span>
-					</span>
-				</div>
-			</div>
-<div id="ctHoraEvento" class='container'>
-</div>
+	
+
+	<div id="ctVestimenta"  >
 	<div>		
-		    <table >
+		    <table style="vertical-align:bottom; text-align: left;"  >
         <tr>      
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
             <td style="vertical-align:bottom" valign="bottom">                
                 <label class='control-label'  id= 'lblCamisola'  >* Camisola</label>
             </td>
-            <td>
+            <td style="width: 50px">
                 <input id="chkCamisola" onclick="bloqueavestimenta(this);" class="form-control" type="checkbox" value="Camisola" /></td>
-            <td>
+            <td style="width: 250px">
                 <input id="txtCamisola" class="form-control numero" idvariabledepende="Camisola" maxlength="100" type="text" /></td>
-            <td>&nbsp;</td>            
-        </tr>       
-        <tr>
-            <div>
-            <td >                
-                <label class='control-label' id= 'lblPantalonTactico'  >* Pantalón táctico</label></td>
-            <td>
-                <input class='form-control' onclick="bloqueavestimenta(this);" type='checkbox' id='chkPantalonTactico' value='PantalonTactico'/></td>
-            <td>
-				<input class='form-control numero' idvariabledepende ='PantalonTactico' maxlength='25' id='txtPantalonTactico' type='text'  /></td>
-            <td>&nbsp;</td>
-                </div>
+            <td class="auto-style2">&nbsp;</td>            
         </tr>
         <tr>
-            <div>
-            <td >                
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="vertical-align: bottom" valign="bottom" >                
                 <label class='control-label' id= 'lblPlayeraInterior'  >* Playera interior</label></td>
-            <td>
+            <td style="width: 50px">
                 <input class='form-control' onclick="bloqueavestimenta(this);" type='checkbox' id='chkPlayeraInterior' value='PlayeraInterior'/></td>
             <td>
 				<input class='form-control numero' idvariabledepende ='PlayeraInterior' maxlength='25' id='txtPlayeraInterior' type='text'  /></td>
+            <td class="auto-style2">&nbsp;</td>
+              
+
+        </tr>       
+        <tr>
             <td>&nbsp;</td>
-                </div>
+            <td>&nbsp;</td>
+            <td style="vertical-align:bottom" valign="bottom">                
+                <label class='control-label' id= 'lblPantalonTactico'  >* Pantalón táctico</label></td>
+            <td style="width: 50px">
+                <input class='form-control' onclick="bloqueavestimenta(this);" type='checkbox' id='chkPantalonTactico' value='PantalonTactico'/></td>
+            <td>
+				<input class='form-control numero' idvariabledepende ='PantalonTactico' maxlength='25' id='txtPantalonTactico' type='text'  /></td>
+            <td class="auto-style2">&nbsp;</td>
+                
+
         </tr>
         <tr>
-            <div>
-            <td >                
-				<label class='control-label' id= 'lblBotas'  >* Botas</label></td>
-            <td>
-                <input class='form-control' onclick="bloqueavestimenta(this);" type='checkbox' id='chkBotas' value='Botas'/></td>
-            <td>
-				<input class='form-control numero' idvariabledepende ='Botas' maxlength='25' id='txtBotas' type='text'  /></td>
+           <td>&nbsp;</td>
             <td>&nbsp;</td>
-                </div>
-        </tr>
-        <tr>
-            <div>
-            <td >                
+            <td style="vertical-align:bottom" valign="bottom">                
                 <label class='control-label' id= 'lblGorra'  >* Gorra</label></td>
-            <td>
+            <td style="width: 50px">
                 <input class='auto-style1' onclick="bloqueavestimenta(this);" type='checkbox' id='chkGorra' value='Gorra'/></td>
             <td>
 				<input class='form-control numero' idvariabledepende ='Gorra' maxlength='25' id='txtGorra' type='text'  /></td>
-            <td>&nbsp;</td>
-                </div>
+            <td class="auto-style2">&nbsp;</td>
+               
+
         </tr>
         <tr>
-            <div>
-            <td >                
-                <label class='control-label' id= 'lblotrosunif'  >* Otros</label></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style="vertical-align:bottom" valign="bottom">                
+				<label class='control-label' id= 'lblBotas'  >* Botas</label></td>
+            <td style="width: 50px">
+                <input class='form-control' onclick="bloqueavestimenta(this);" type='checkbox' id='chkBotas' value='Botas'/></td>
             <td>
+				<input class='form-control numero' idvariabledepende ='Botas' maxlength='25' id='txtBotas' type='text'  /></td>
+            <td class="auto-style2">&nbsp;</td>
+             
+        </tr>
+        
+        <tr style="vertical-align:middle" valign="middle">
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+            <td>&nbsp;</td>
+            <td style="vertical-align: bottom" valign="bottom" >                
+                <label class='control-label' id= 'lblotrosunif'  >* Otros</label></td>
+            <td style="width: 50px">
                 <input class='form-control' onclick="bloqueavestimenta(this);" type='checkbox' id='chkOtrosunif' value='otrosunif'/></td>
             <td>
 				<input class='form-control numero' idvariabledepende ='otrosunif' maxlength='100' id='txtotrosunif' type='text'  /></td>
-            <td>&nbsp;</td>
-                </div>
+            <td class="auto-style2"></td>
+               
         </tr>
         </table>
 	</div>
+</div>
 
-			&nbsp;
-   	<div id="ctHoraEvento" class='container'>
+	<div id="ctHoraEvento" class='container'>
 		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 			<div class='col-xs-12 col-md-12 col-lg-12 col-xl-12 form-group'>
 				<label class='obligatorio etiquetaM control-label'  >* Observaciones/Información adicional</label>
