@@ -970,12 +970,26 @@ var SelectedItem;
 		</div>
 	</section>
 	
-	<div class='container'>
-    <div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
-        <label class='control-label' id='lblUbicacion'>Ubicacion *</label>
-        <input type='text' class='form-control' id='lblUbicacion' maxlength='50'>
-    </div>    
+		<div id="Areas" class='container'>
+		<div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group' unselectable='on'>
+				<input type='button' class="bDinamico" onclick='javascript:DuplicarGrupo("DAreas", this);' id='AreasNumeroEquipos' value='Agregar Areas'/>
+			</div>
+		</div>
 	</div>
+	<section class="AreasD">
+		<div class='container DAreas' style="visibility:hidden; display:none">
+			<div class='col-xs-12 col-lg-12 col-md-12 col-xl-12'>
+
+			<div class='col-xs-6 col-md-4 col-lg-3 col-xl-3 form-group'>
+				<label class='control-label' id= 'lblUbicacion'  >* Ubicacion</label>
+				<input class='form-control text' idvariabledepende ='Ubicacion' maxlength='50' id='txtUbicacion' type='text'  />
+			</div>
+
+			</div>
+		</div>
+	</section>				
+
 			
 			
 	<div id="ctHoraEvento" class='container'>
