@@ -969,6 +969,14 @@ var SelectedItem;
 			</div>
 		</div>
 	</section>
+	
+	<div class='container'>
+    		<div class='col-xs-12 col-md-3 col-lg-3 col-xl-3 form-group '>
+        	<label class='control-label' id='lblUbicacion'>Ubicacion *</label>
+        	<input type='text' class='form-control' id='lblUbicacion' maxlength='50'>
+    		</div>
+	</div>
+			
 	<div id="ctHoraEvento" class='container'>
 		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
 			<div class='col-xs-12 col-md-12 col-lg-12 col-xl-12 form-group'>
